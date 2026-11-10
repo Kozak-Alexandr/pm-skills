@@ -12,7 +12,7 @@
 ## Установка
 
 ```
-git clone <адрес репозитория> pm-skills
+git clone https://github.com/Kozak-Alexandr/pm-skills.git
 cd pm-skills
 powershell -ExecutionPolicy Bypass -File install.ps1
 ```
