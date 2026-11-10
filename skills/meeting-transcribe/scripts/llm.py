@@ -106,7 +106,8 @@ def chat(backend: str, system: str, user: str, *, max_tokens: int = 8000,
             # Qwen по умолчанию «размышляет»: без явного флага ответ может уйти целиком в размышление
             extra = {"chat_template_kwargs": {"enable_thinking": thinking}}
             budget += 8000 if thinking else 0
-        direct = ENV.get("LLM_NO_PROXY", "") == "1"
+        # localhost (Ollama) и внутренние шлюзы часто не открываются через корпоративный прокси
+        direct = ENV.get("LLM_NO_PROXY", "") == "1" or any(h in base for h in ("localhost", "127.0.0.1"))
         return _openai_chat(base, key, model, system, user, budget, extra, timeout, direct)
     if backend == "local":
         return _openai_chat(ENV.get("LOCAL_LLM_URL", "http://localhost:11434/v1"),

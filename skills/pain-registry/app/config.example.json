@@ -3,7 +3,7 @@
   "base_url": "",
   "model": "",
   "api_key": "",
-  "use_system_proxy": false,
+  "use_system_proxy": true,
   "verify_tls": true,
   "ca_bundle": "",
   "json_mode": true,
