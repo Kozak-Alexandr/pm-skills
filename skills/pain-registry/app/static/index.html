@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Реестр болей</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="app.css">
+<script>
+  // Локальная версия: библиотеки разбора лежат рядом и работают без интернета.
+  window.PR = { env: {
+    jszipUrl: 'vendor/jszip.min.js',
+    pdfModuleUrl: new URL('vendor/pdf.min.mjs', location.href).href,
+    pdfWorkerUrl: new URL('vendor/pdf.worker.min.mjs', location.href).href,
+  } };
+</script>
+</head>
+<body>
+<div class="app" id="app"><div class="empty">Загрузка…</div></div>
+<script src="core.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
